@@ -18,7 +18,7 @@
 	
 	window.onbeforeunload = function (){
 		var previousScore = localStorage.getItem("score");
-		var newScore = previousScore + 1;
+		var newScore = parseInt(previousScore) + 1;
 		localStorage.setItem("score", newScore);
 
 		//the question is, how do I check if this is changing properly.  There is no "onchange"
