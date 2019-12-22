@@ -11,10 +11,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   </head>
-  <body>
+  <body onload = "start();">
   	<button onClick = "game();">Start game</button>
 
   	<script>
+		//this is how I monitor the score to make sure that's working right
+		//since I don't know of an "on change" thing for local storage
+  		
+
+
+  		function start(){
+  			localStorage.setItem("score", 0);
+  			setInterval(function(){ console.log(localStorage.getItem("score"))}, 5000);
+  		}
+
 var top = 0;
 var left = 0;
 //putting the variables up here helped, but now it only seems to obey the randomness of left, not top.
@@ -24,7 +34,7 @@ var popUpWidth = 200;
 var popUpHeight = 200;
 
 var windowSize = $(window).width();
-
+console.log(windowSize);
 
   		
   		function game()

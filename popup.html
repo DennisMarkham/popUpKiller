@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Pop Up Killer</title>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  </head>
+
+  <body>
+<p style = "font-size: 24px;">POP UP!!!!</p>
+
+<script>
+	
+	window.onbeforeunload = function (){
+		var previousScore = localStorage.getItem("score");
+		var newScore = previousScore + 1;
+		localStorage.setItem("score", newScore);
+
+		//the question is, how do I check if this is changing properly.  There is no "onchange"
+		//function for local storage items as far as I know.  So might have to use an interval
+		// function
+
+	}
+</script>
+  </body>
+  </html>
