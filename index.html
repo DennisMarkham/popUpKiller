@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Pop Up Killer</title>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  </head>
+  <body>
+  	<button onClick = "game();">Start game</button>
+
+  	<script>
+var top = 0;
+var left = 0;
+//putting the variables up here helped, but now it only seems to obey the randomness of left, not top.
+
+//default pop up size
+var popUpWidth = 200;
+var popUpHeight = 200;
+
+var windowSize = $(window).width();
+
+
+  		
+  		function game()
+  		{
+
+  			//changes pop up size with view port.  Or it should, I don't think it works
+if (windowSize < 1000)
+{
+	popUpWidth = 100;
+	popupHeight = 100;
+}
+  			
+  			top = Math.floor((Math.random() * 1000) + 1);
+  			left = Math.floor((Math.random() * 1000) + 1);
+  			window.open("popup.html", "_blank", "toolbar=no,scrollbars=no,resizable=no,top=" + top +",left=" + left + ",width=" + popUpWidth + ",height=" + popUpHeight);
+  		}
+  	</script>
+</body>
+</html>
