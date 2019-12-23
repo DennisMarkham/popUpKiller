@@ -13,7 +13,7 @@
   </head>
   <body onload = "start();">
   	<button onClick = "game();">Start game</button>
-
+<p>Score: <span id = "score">0</span></p>
   	<script>
 		//this is how I monitor the score to make sure that's working right
 		//since I don't know of an "on change" thing for local storage
@@ -22,7 +22,7 @@
 
   		function start(){
   			localStorage.setItem("score", 0);
-  			setInterval(function(){ console.log(localStorage.getItem("score"))}, 5000);
+  			setInterval(function(){ $("#score").text(localStorage.getItem("score"))}, 50);
   		}
 
 var top = 0;
